@@ -1,0 +1,419 @@
+html {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:#ababab;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.container {
+    width: 100% ;
+    background-color: white;
+    margin: 0 auto; /*自動でcontainerのいちを中央に寄せる*/
+}
+
+
+.contents {
+    margin: 0;
+    padding: 0;
+}
+
+.h-title {
+    height: 100px;
+    border-top: 5px solid blue;
+    position: relative;
+}
+
+.h-title .h-logo {
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+}
+
+/*　ハンバーガーボタン　*/
+.h-hamburger {
+    display : none;
+  }
+
+.h-nav {
+    border-top: 1px solid #d2d2d2;
+}
+
+.h-menu {
+    letter-spacing: -.4em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.h-list {
+    display: inline-block;
+    width: calc(100%/6);
+    position: relative;
+    letter-spacing: normal;
+    height: 64px;
+    border-right: 1px solid #d2d2d2;
+    box-sizing: border-box;
+    vertical-align: bottom;     /*画層との隙間をなくす*/
+}
+
+.h-list {
+    text-decoration: none;
+}
+
+.h-list:hover {
+    background-color: #e6ebfa;
+}
+
+
+.h-list:hover .h-l-box {
+    border-left: 3px solid blue;
+}
+
+.h-list:hover .h-l-top {
+    color: blue;
+}
+
+.h-l-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
+
+.h-l-top {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 4px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.h-l-bottom {
+    font-size: 10px;
+    color: #ababab;
+    text-align: center;
+}
+
+.active {
+    background-color: #e6ebfa;
+}
+
+
+.active .h-l-box {
+    border-left: 3px solid blue;
+}
+
+.active .h-l-top a{
+    color: blue;
+}
+
+.h-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.contents {
+    padding: 24px;
+}
+
+.main {
+    float: left;
+    width: 70%;
+    margin-bottom: 48px;
+}
+
+.m-h2 {
+    background-color: #0f3bda;
+    color: white;
+    padding: 14px 12px 14px 24px;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+.m-h3 {
+    background-color: white;
+    color: black;
+    padding: 14px 12px 14px 24px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+
+
+.m-h2::first-letter {
+    border-left: 3px solid #e6ebfa;
+    padding-left: 16px;
+}
+
+.m-section{
+    color: #666666;
+}
+
+
+.m-info-date{
+    float: left;
+    padding: 0;
+    color: blue;
+    font-size: 15px;
+}
+
+.m-info{
+    margin: 12px;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.m-info-content{
+    margin-left: 9em;
+}
+
+.m-info-new {
+    background-color: red;
+    color: white;
+    font-size: 8px;
+    padding: 0;
+    border-radius: 4px;
+}
+
+.m-log{
+    text-align: right;
+    padding-top: 24px;
+}
+
+.m-log a{
+    color: #666;
+}
+
+.m-p{
+    font-size: 15px;
+    color: #666666;
+    margin: 24px 16px;
+    line-height: 2;
+}
+
+
+.m-point{
+    color: red;
+}
+
+.grey{
+    background-color: #ddd;
+    padding: 5px;
+}
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+th, td{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 0;
+}
+
+form{
+    text-align: center;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    overflow: hidden;
+    line-height: 1;
+    position: relative;
+    box-shadow: 0px 5px 10px #ccc;
+    margin-bottom: 20px;
+    background: linear-gradient(#fff, #ddd);
+}
+
+
+.card:hover{
+    box-shadow: 0px 10px 20px #ccc;
+    transform:translateY(-5px);
+    transition: 0.3s;
+}
+
+.card img{
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #666666;
+}
+
+.card h4{
+    color: blue;
+}
+
+input{
+    width: 60%;
+}
+
+.card::before{
+    content: "→";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    background-color: #666;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+textarea{
+    width: 90%;
+}
+
+.botton{
+    width: 20%;
+}
+
+th{
+    width: 25%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td{
+    text-align: left;
+}
+
+.m-t-title{
+    text-align: left;
+}
+
+.side {
+    float: right;
+    width: 25%;
+    margin-top: 16px;
+}
+
+.s-framebox{
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    margin-bottom: 24px;
+    color: #666666;
+}
+
+
+.s-box{
+    margin-bottom: 24px;
+    color: #666666;
+}
+
+
+
+.s-h4{
+    margin: 0 4px;
+    padding: 16px 8px;
+    border-top: 5px solid blue;
+    border-bottom: 1px solid #ccc;
+    background-color: #d2d2d2;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.s-menu{
+    margin: 0;
+    padding: 0;
+}
+
+.s-list{
+    padding: 12px 8px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fefefe;
+    list-style-type: none;
+    margin: 0 4px;
+}
+
+.s-list:hover {
+    background-color: white;
+    color: #666666;
+}
+
+
+.s-list a{
+    text-decoration: none;
+}
+
+.s-list:hover a{
+    color: blue;
+}
+
+.s-img{
+    float: left;
+    width: 20%;
+    margin-right: 5px;
+}
+
+
+.s-l-title {
+    text-decoration: none;
+    color: blue;
+    font-size: 11px;
+}
+
+.s-l-detail {
+    text-decoration: none;
+    color: ccc;
+    font-size: 11px;
+}
+
+.s-company-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+
+.s-company-info{
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+}
+.footer {
+    background-color: blue;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    padding: 16px 0px;
+    clear: both;
+    line-height: 2;
+}
+
+.footer-under {
+    font-size: 12px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: blue;
+}

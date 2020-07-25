@@ -1,0 +1,491 @@
+html {
+    margin: 0;
+}
+
+body {
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color:#ababab;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.container {
+    width: 98% ;
+    background-color: white;
+    padding: 1%;
+    margin: 0 auto; /*自動でcontainerのいちを中央に寄せる*/
+}
+
+
+.contents {
+    margin: 0;
+    padding: 0;
+}
+
+.h-title {
+    height: 100px;
+    border-top: 5px solid blue;
+    position: relative;
+}
+
+.h-title .h-logo {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+}
+
+/*　ハンバーガーボタン　*/
+.h-hamburger {
+    display : block;
+    position: absolute;
+    z-index : 4;
+    right : 10px;
+    top   : 30px;
+    width : 42px;
+    height: 42px;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid black;
+  }
+  .h-hamburger span {
+    display : block;
+    position: absolute;
+    width   : 30px;
+    height  : 2px ;
+    left    : 7px;
+    background : #555;
+   -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+  .h-hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .h-hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .h-hamburger span:nth-child(3) {
+    top: 30px;
+  }
+
+/* ナビ開いてる時のボタン */
+.h-hamburger.active span:nth-child(1) {
+    top : 20px;
+    left: 6px;
+    background :black;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+  
+.h-hamburger.active span:nth-child(2),
+.h-hamburger.active span:nth-child(3) {
+    top: 20px;
+    background :black;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
+  
+nav.h-nav {
+    position: fixed;
+    z-index : 2;
+    top  : 105px;
+    left : 0;
+    color: #fff;
+    background: rgba(0,0,0,0.8);
+    text-align: left;
+    width: 100%;
+    opacity: 0;
+    transition: opacity .6s ease, visibility .6s ease;
+  }
+  
+nav.h-nav  ul {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+  
+nav.h-nav  ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    transition: .4s all;
+}
+nav.h-nav ul li:last-child {
+    padding-bottom: 0;
+}
+
+  
+nav.h-nav ul li a {
+    display: block;
+    color: #fff;
+    padding: 1em 0;
+    text-decoration :none;
+}
+  
+  /* このクラスを、jQueryで付与・削除する */
+nav.h-nav.active {
+    opacity: 100;
+  
+}
+
+
+.h-menu {
+    letter-spacing: -.4em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.h-list{
+    padding: 16px;
+    display: inline-block;
+    width: calc(100%/6);
+    position: relative;
+    letter-spacing: normal;
+    height: 64px;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    vertical-align: bottom;     /*画層との隙間をなくす*/
+}
+
+.h-l-box {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform:translate(-50%, -50%);
+    width: 180px;
+
+}
+
+.h-l-top {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 4px;
+    font-weight: bolder;
+}
+
+.h-l-bottom {
+    font-size: 10px;
+    color: white;
+}
+
+.h-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.contents {
+    padding: 24px;
+}
+
+.main {
+    float: none;
+    width: 100%;
+    margin-bottom: 48px;
+}
+
+.m-h2 {
+    background-color: #0f3bda;
+    color: white;
+    padding: 7px 6px 7px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.m-h3 {
+    background-color: white;
+    color: black;
+    padding: 7px 6px 7px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+
+.m-h2::first-letter {
+    border-left: 3px solid #e6ebfa;
+    padding-left: 8px;
+}
+
+.m-section{
+    color: #666666;
+}
+
+
+.m-info-date{
+    float: left;
+    padding: 0;
+    color: blue;
+    font-size: 8px;
+}
+
+.m-info{
+    margin: 12px;
+    font-size: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.m-info-content{
+    margin-left: 9em;
+    line-height: 1.5;
+}
+
+.m-info-new {
+    background-color: red;
+    color: white;
+    font-size: 6px;
+    padding: 0;
+    border-radius: 2px;
+}
+
+.m-log{
+    text-align: right;
+    padding-top: 12px;
+}
+
+.m-log a{
+    color: #666;
+}
+
+.m-p{
+    font-size: 12px;
+    color: #666666;
+    margin: 24px 16px;
+    line-height: 2;
+}
+
+
+.m-point{
+    color: red;
+}
+
+.grey{
+    background-color: #ddd;
+    padding: 5px;
+}
+
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+th, td{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 0;
+}
+
+form{
+    text-align: center;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    overflow: hidden;
+    line-height: 1;
+    position: relative;
+    box-shadow: 0px 5px 10px #ccc;
+    margin-bottom: 20px;
+    background: linear-gradient(#fff, #ddd);
+}
+
+
+.card:hover{
+    box-shadow: 0px 10px 20px #ccc;
+    transform:translateY(-5px);
+    transition: 0.3s;
+}
+
+.card img{
+    width: 25%;
+    float: left;
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #666666;
+}
+
+.card h4{
+    color: blue;
+}
+
+input{
+    width: 90%;
+}
+
+.card::before{
+    content: "→";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    background-color: #666;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+textarea{
+    width: 90%;
+}
+
+.botton{
+    width: 30%;
+    font-size: 12px;
+}
+
+th{
+    width: 25%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td{
+    text-align: left;
+}
+
+.m-t-title{
+    text-align: left;
+}
+
+.side {
+    float: none;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.s-framebox{
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    margin-bottom: 24px;
+    color: #666666;
+}
+
+
+.s-box{
+    margin-bottom: 24px;
+    color: #666666;
+}
+
+
+.s-h4{
+    margin: 0 4px;
+    padding: 16px 8px;
+    border-top: 5px solid blue;
+    border-bottom: 1px solid #ccc;
+    background-color: #d2d2d2;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.s-menu{
+    margin: 0;
+    padding: 0;
+}
+
+.s-list{
+    padding: 8px 8px 40px 8px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fefefe;
+    list-style-type: none;
+    margin: 0 4px;
+}
+
+.s-response-a {
+    padding: 8px;
+}
+
+.s-response-b {
+    padding: 8px;
+    border-bottom: none;
+}
+
+
+.s-list:hover {
+    background-color: white;
+    color: #666666;
+}
+
+
+.s-list a{
+    text-decoration: none;
+}
+
+.s-list:hover a{
+    color: blue;
+}
+
+.s-img{
+    float: left;
+    width: 20%;
+    margin-right: 5px;
+    clear: both;
+}
+
+
+.s-l-title {
+    text-decoration: none;
+    color: blue;
+    font-size: 11px;
+}
+
+.s-l-detail {
+    text-decoration: none;
+    color: ccc;
+    font-size: 11px;
+}
+
+.s-company-title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    padding: 0 0 5px 0;
+}
+
+
+.s-company-info{
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.footer {
+    background-color: blue;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    padding: 16px 0px;
+    clear: both;
+    line-height: 1;
+}
+
+.footer-under {
+    font-size: 12px;
+}
+
+.footer a{
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    color: blue;
+}
